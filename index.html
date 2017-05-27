@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+</head>
+
+<body>
+	<div style="text-align:center">
+		<canvas id="webgl_canvas" width="864" height="512">
+	</div>
+	
+	<audio id="sndJump" preload="auto">
+		<source src="jump.wav" type="audio/wav">
+	</audio>
+	
+	<audio id="sndSkid" preload="auto">
+		<source src="skid.wav" type="audio/wav">
+	</audio>
+	
+	<audio id="sndLand" preload="auto">
+		<source src="land.wav" type="audio/wav">
+	</audio>
+	
+	<audio id="sndStep1" preload="auto">
+		<source src="step1.wav" type="audio/wav">
+	</audio>
+	
+	<audio id="sndStep2" preload="auto">
+		<source src="step2.wav" type="audio/wav">
+	</audio>
+	
+	<audio id="sndStep3" preload="auto">
+		<source src="step3.wav" type="audio/wav">
+	</audio>
+	
+	
+	<audio id="mscLevel" preload="auto" autoplay loop volume=0.5>
+		<source src="https://www.mariowiki.com/images/2/21/Super_Mario_Galaxy_2_Fluffy_Bluff_Galaxy_Music.oga" type="audio/ogg">
+	</audio>
+	
+</body>
+
+
+<script type="text/javascript" src="glMatrix.js"></script>
+<script type="text/javascript" src="gl.js"></script>
+<script type="text/javascript" src="shader.js"></script>
+<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="collisionMesh.js"></script>
+<script type="text/javascript" src="gravityMesh.js"></script>
+<script type="text/javascript" src="objPlayer.js"></script>
+<script type="text/javascript" src="modelPlayer.js"></script>
+<script type="text/javascript" src="objSmoke.js"></script>
+<script type="text/javascript" src="objCamera.js"></script>
+<script type="text/javascript" src="objLaunchStar.js"></script>
+<script type="text/javascript" src="planetTest.js"></script>
+<script type="text/javascript" src="planetTest2.js"></script>
+<script type="text/javascript" src="planetSphere1.js"></script>
+<script type="text/javascript" src="planetStart.js"></script>
+<script type="text/javascript">
+	document.getElementById("mscLevel").volume = 0.2;
+	mainStart();  
+</script>
+
+
+</html>
