@@ -55,6 +55,12 @@ function soundPlay(id) {
 
 
 function mainStart() {
+	if (document.documentElement.requestFullscreen)
+		document.documentElement.requestFullscreen();
+	
+	window.onresize = resize;
+	resize();
+	
 	var canvas = document.getElementById("webgl_canvas");
 	hglInit(canvas);
 	
@@ -77,13 +83,22 @@ function mainStart() {
 	
 }
 
+
+function resize()
+{
+	var canvas = document.getElementById("webgl_canvas");
+	canvas.width = window.innerWidth;
+	canvas.height = window.innerHeight;
+}
+
+
 var angle = 0;
 function mainLoop() {
 	hglTime += 1 / 60;
 	
-    gl.viewport(0, 0, gl.viewportWidth, gl.viewportHeight);
+    gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
 	gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-    mat4.perspective(45, gl.viewportWidth / gl.viewportHeight, 1, 1000, hglMatrixProjection);
+    mat4.perspective(45, gl.canvas.width / gl.canvas.height, 1, 1000, hglMatrixProjection);
 	
 	
 	/*mat4.lookAt([0,10,2],

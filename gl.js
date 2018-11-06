@@ -9,6 +9,7 @@ function hglInit(canvas) {
 		var attrib = new Object();
 		attrib.stencil = true;
 		gl = canvas.getContext("experimental-webgl", attrib);
+		gl.canvas = canvas;
 		gl.viewportWidth = canvas.width;
 		gl.viewportHeight = canvas.height;
 		
